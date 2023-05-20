@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lindona</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+      </style>
+</head>
+<body>
+    <div class="card hoverable">
+        <div class="first-content">
+            <span>Te amo&#x2764</span>
+        </div>
+        <div class="second-content">
+            <span>Florzinha &#x1F33C</span>
+        </div>
+    </div>
+
+    <script>
+        
+        const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+      
+        
+        if (isTouchDevice) {
+          const hoverableCards = document.querySelectorAll('.hoverable');
+          hoverableCards.forEach(card => {
+            card.addEventListener('touchstart', function() {
+              this.classList.add('hover');
+            });
+      
+            card.addEventListener('touchend', function() {
+              this.classList.remove('hover');
+            });
+          });
+        }
+      </script>
+</body>
+</html>
